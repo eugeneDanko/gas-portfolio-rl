@@ -1,0 +1,11 @@
+evaluation:
+  seed_start: 10000
+  seeds: 200
+  stress_seeds: 100
+  confidence_level: 0.95
+  cvar_alpha: 0.05
+  bootstrap_samples: 500
+  fixed_stock_weight: 0.50
+  fixed_futures_exposure: -0.25
+  # Dedicated paired paths for the 15-policy PPO-feasible reward grid.
+  reward_grid_seeds: 20

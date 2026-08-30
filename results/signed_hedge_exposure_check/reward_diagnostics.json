@@ -1,0 +1,8 @@
+[
+  {
+    "scenario": "crisis_stress",
+    "reward_utility_correlation": 0.8644930167841618,
+    "passes_minimum_alignment": true,
+    "episodes": 60
+  }
+]

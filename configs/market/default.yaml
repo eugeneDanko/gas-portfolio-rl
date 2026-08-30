@@ -1,0 +1,55 @@
+market:
+  trading_days: 252
+  episode_steps: 504
+  calendar_start_year: 2027
+  initial_gas_price: 3.0
+  initial_stock_price: 100.0
+  annual_stock_dividend_yield: 0.03
+  stock_dividend_payment_day: 25
+  seasonality_anchors:
+    - ["01-01", 0.30]
+    - ["02-15", 0.10]
+    - ["04-25", -0.22]
+    - ["06-01", 0.02]
+    - ["08-31", 0.02]
+    - ["10-15", 0.10]
+    - ["12-15", 0.24]
+    - ["12-27", 0.42]
+    - ["12-31", 0.34]
+  seasonality_randomization: 0.10
+  seasonality_phase_jitter_days: 3
+  contract_expiry_day: 27
+  forward_curve_contracts: 12
+  transition_matrix:
+    - [0.995, 0.005]
+    - [0.030, 0.970]
+  normal:
+    kappa: 2.5
+    long_run_factor: 0.0
+    gas_volatility: 0.35
+    gas_jump_probability: 0.001
+    gas_jump_mean: 0.0
+    gas_jump_std: 0.12
+    stock_drift: 0.07
+    stock_volatility: 0.18
+    gas_beta: 0.35
+    market_drift: 0.05
+    market_volatility: 0.12
+    corporate_jump_probability: 0.0005
+    corporate_jump_mean: -0.08
+    corporate_jump_std: 0.05
+  crisis:
+    kappa: 1.2
+    long_run_factor: 0.20
+    gas_volatility: 0.75
+    gas_jump_probability: 0.020
+    gas_jump_mean: 0.04
+    gas_jump_std: 0.20
+    stock_drift: -0.18
+    stock_volatility: 0.42
+    gas_beta: 0.20
+    market_drift: -0.25
+    market_volatility: 0.35
+    corporate_jump_probability: 0.015
+    corporate_jump_mean: -0.12
+    corporate_jump_std: 0.10

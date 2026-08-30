@@ -1,0 +1,23 @@
+baselines:
+  relative_momentum:
+    lookback: 20
+    allocation: 0.50
+    neutral_stock_weight: 0.25
+    score_threshold: 0.25
+    rebalance_interval: 5
+  rolling_hedge:
+    lookback: 20
+    stock_weight: 0.50
+    initial_hedge_ratio: 0.50
+    maximum_futures_exposure: 0.50
+    rebalance_interval: 5
+  signed_rolling_hedge:
+    lookback: 40
+    stock_weight: 0.50
+    initial_hedge_ratio: 0.50
+    maximum_futures_exposure: 0.50
+    rebalance_interval: 5
+    beta_smoothing: 0.20
+    beta_shrinkage: 0.50
+    minimum_abs_correlation: 0.10
+    exposure_change_threshold: 0.03

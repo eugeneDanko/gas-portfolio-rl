@@ -1,0 +1,20 @@
+[
+  {
+    "scenario": "base",
+    "reward_utility_correlation": 0.7641146244921335,
+    "passes_minimum_alignment": true,
+    "episodes": 21
+  },
+  {
+    "scenario": "calm",
+    "reward_utility_correlation": 0.7861119317496995,
+    "passes_minimum_alignment": true,
+    "episodes": 21
+  },
+  {
+    "scenario": "crisis_stress",
+    "reward_utility_correlation": 0.772996687506854,
+    "passes_minimum_alignment": true,
+    "episodes": 14
+  }
+]

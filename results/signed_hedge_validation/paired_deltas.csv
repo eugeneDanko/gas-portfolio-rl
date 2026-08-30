@@ -1,0 +1,4 @@
+scenario,strategy,benchmark,mean_total_return_delta,median_total_return_delta,win_rate
+base,signed_rolling_hedge,rolling_hedge,0.005604027241619861,0.006045302089769722,0.57
+calm,signed_rolling_hedge,rolling_hedge,-0.004487540056436597,4.696583125751719e-05,0.5
+crisis_stress,signed_rolling_hedge,rolling_hedge,0.02478215518372557,0.026774244324030028,0.64

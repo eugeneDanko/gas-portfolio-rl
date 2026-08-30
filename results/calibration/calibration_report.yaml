@@ -1,0 +1,65 @@
+objective: 0.01030269437532572
+candidates_evaluated: 32
+maximum_objective: 0.1
+passes_calibration_gate: true
+individual_moments_pass: true
+moment_errors:
+  gas_volatility_relative: 0.004257896696212077
+  stock_volatility_relative: 0.11098133896873022
+  futures_volatility_relative: 0.051413651129955
+  stock_futures_correlation_absolute: 0.047596094253257365
+  crisis_fraction_absolute: 0.0016997354497354233
+targets:
+  gas_volatility: 0.45
+  stock_volatility: 0.24
+  futures_volatility: 0.42
+  stock_futures_correlation: 0.2
+  crisis_fraction: 0.14
+tolerances:
+  gas_volatility_relative: 0.15
+  stock_volatility_relative: 0.15
+  futures_volatility_relative: 0.15
+  stock_futures_correlation_absolute: 0.08
+  crisis_fraction_absolute: 0.03
+moments:
+  gas_volatility: 0.4480839464867046
+  stock_volatility: 0.26663552135249524
+  futures_volatility: 0.3984062665254189
+  stock_futures_correlation: 0.24759609425325738
+  crisis_fraction: 0.14169973544973544
+selected_parameters:
+  transition_matrix:
+  - - 0.9853757211687246
+    - 0.014624278831275362
+  - - 0.0835637200124875
+    - 0.9164362799875125
+  normal:
+    kappa: 2.5
+    long_run_factor: 0.0
+    gas_volatility: 0.3529464312649868
+    gas_jump_probability: 0.001
+    gas_jump_mean: 0.0
+    gas_jump_std: 0.12
+    stock_drift: 0.07
+    stock_volatility: 0.16372344410609468
+    gas_beta: 0.1275445110699527
+    market_drift: 0.05
+    market_volatility: 0.09741531863489791
+    corporate_jump_probability: 0.0005
+    corporate_jump_mean: -0.08
+    corporate_jump_std: 0.05
+  crisis:
+    kappa: 1.2
+    long_run_factor: 0.2
+    gas_volatility: 0.6150624046158681
+    gas_jump_probability: 0.02
+    gas_jump_mean: 0.04
+    gas_jump_std: 0.2
+    stock_drift: -0.18
+    stock_volatility: 0.3211857576585129
+    gas_beta: 0.2
+    market_drift: -0.25
+    market_volatility: 0.24799119704619604
+    corporate_jump_probability: 0.014293381005133887
+    corporate_jump_mean: -0.12
+    corporate_jump_std: 0.1

@@ -1,0 +1,12 @@
+{
+  "gymnasium_check": true,
+  "seed_determinism": true,
+  "finite_observations_and_rewards": true,
+  "checked_steps": 64,
+  "observation_shape": [
+    46
+  ],
+  "action_shape": [
+    5
+  ]
+}

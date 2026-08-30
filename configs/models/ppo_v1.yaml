@@ -1,0 +1,39 @@
+# Frozen compatibility config for reproducing the original PPO experiment.
+# New experiments should use ppo.yaml (v2).
+ppo:
+  version: v1
+  total_timesteps: 1000000
+  n_envs: 4
+  learning_rate: 0.0003
+  learning_rate_schedule: constant
+  n_steps: 512
+  batch_size: 256
+  n_epochs: 10
+  gamma: 0.995
+  gae_lambda: 0.95
+  clip_range: 0.20
+  ent_coef: 0.005
+  vf_coef: 0.50
+  max_grad_norm: 0.50
+  policy_layers: [128, 128]
+  normalize_observations: true
+  normalize_rewards: true
+  clip_observation: 10.0
+  clip_reward: 10.0
+  eval_frequency: 50000
+  validation_episodes: 32
+  validation_stress_episodes: 8
+  crisis_validation_weight: 0.0
+  checkpoint_frequency: 100000
+  decision_interval: 1
+  stock_action_deadband: 0.0
+  futures_action_deadband: 0.0
+  margin_call_score_penalty: 5.0
+  bankruptcy_score_penalty: 10.0
+  maximum_high_cash_fraction: 0.60
+  high_cash_score_penalty: 1.0
+  minimum_average_stock_weight: 0.0
+  stock_shortfall_score_penalty: 0.0
+  maximum_turnover: 1000000.0
+  turnover_score_penalty: 0.0
+  device: auto

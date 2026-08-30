@@ -1,0 +1,16 @@
+scenario,strategy,benchmark,mean_total_return_delta,median_total_return_delta,win_rate
+base,cash,rolling_hedge,0.0030536993599087126,0.00715937870701544,0.51
+base,fixed_hedge,rolling_hedge,-0.015923771984134156,0.017179356945512203,0.6
+base,relative_momentum,rolling_hedge,-0.015845895345411854,-0.06081904212255945,0.42
+base,signed_rolling_hedge,rolling_hedge,0.0029623055766382876,0.0027888102768979794,0.535
+base,stock_only,rolling_hedge,0.014955371468944155,-0.020280067362895837,0.45
+calm,cash,rolling_hedge,-0.12379095625727983,-0.10372021422045163,0.2
+calm,fixed_hedge,rolling_hedge,0.029571690257287273,0.04514069504210383,0.735
+calm,relative_momentum,rolling_hedge,-0.1298590772138332,-0.13534655717569155,0.18
+calm,signed_rolling_hedge,rolling_hedge,-0.0031673453503260006,-0.0037764259466982475,0.43
+calm,stock_only,rolling_hedge,0.11958671734232626,0.09551846961426297,0.755
+crisis_stress,cash,rolling_hedge,0.3003208933444084,0.3344114955457696,0.91
+crisis_stress,fixed_hedge,rolling_hedge,-0.0666493140603308,-0.053418200188580345,0.39
+crisis_stress,relative_momentum,rolling_hedge,0.349379953893034,0.23463532130625897,0.82
+crisis_stress,signed_rolling_hedge,rolling_hedge,0.030627302570728213,0.026524363733609002,0.67
+crisis_stress,stock_only,rolling_hedge,-0.12054411063369858,-0.18956987227417899,0.13

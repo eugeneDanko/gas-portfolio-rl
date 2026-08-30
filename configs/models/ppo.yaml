@@ -1,0 +1,54 @@
+ppo:
+  version: v4
+  experiment_tag: v5_full
+  # One PPO decision is held for five market days. 600k decisions therefore
+  # correspond to roughly 3m underlying daily transitions.
+  total_timesteps: 600000
+  n_envs: 4
+  learning_rate: 0.0002
+  learning_rate_schedule: linear
+  n_steps: 512
+  batch_size: 256
+  n_epochs: 5
+  # Longer capital-preservation horizon for five-day PPO decisions.
+  gamma: 0.99
+  gae_lambda: 0.97
+  clip_range: 0.15
+  ent_coef: 0.002
+  vf_coef: 0.50
+  max_grad_norm: 0.50
+  policy_layers: [128, 128]
+  normalize_observations: true
+  normalize_rewards: true
+  clip_observation: 10.0
+  clip_reward: 10.0
+  eval_frequency: 20000
+  validation_episodes: 32
+  validation_stress_episodes: 32
+  crisis_validation_weight: 0.40
+  checkpoint_frequency: 50000
+  decision_interval: 5
+  stock_action_deadband: 0.03
+  futures_action_deadband: 0.03
+  option_coverage_deadband: 0.06
+  # Keep the policy insured and damp abrupt migrations between option tenors.
+  minimum_option_coverage: 0.25
+  option_target_smoothing: 0.35
+  # PPO v3 is an insurer: stock exposure is mandatory and futures may hedge
+  # it, but cannot become a larger standalone speculative position.
+  minimum_stock_weight: 0.25
+  maximum_stock_weight: 0.75
+  maximum_futures_exposure: 0.50
+  # With four vector envs this assigns two envs to crisis stress training.
+  stress_training_fraction: 0.50
+  margin_call_score_penalty: 5.0
+  bankruptcy_score_penalty: 10.0
+  maximum_high_cash_fraction: 0.60
+  high_cash_score_penalty: 1.0
+  minimum_average_stock_weight: 0.10
+  stock_shortfall_score_penalty: 2.0
+  maximum_turnover: 20.0
+  turnover_score_penalty: 0.05
+  # Penalize checkpoints whose crisis drawdown exceeds the simple put ladder.
+  put_ladder_drawdown_score_penalty: 4.0
+  device: auto

@@ -1,0 +1,30 @@
+reward:
+  # Net portfolio P&L is measured relative to investing all equity in cash.
+  # Losses receive a larger slope than gains.
+  profit_weight: 1.0
+  loss_aversion: 1.25
+
+  # Compare the loss-averse utility of the actual portfolio with the same
+  # stock/cash portfolio without futures and options. This symmetrically
+  # rewards crisis protection and charges hedge carry in positive markets.
+  hedge_effectiveness_weight: 0.75
+  hedge_effectiveness_clip: 0.02
+  downside_penalty: 2.0
+  drawdown_increase_penalty: 0.10
+  # Dense penalty while current drawdown is outside the 15% risk budget.
+  drawdown_budget_penalty: 0.50
+  turnover_penalty: 0.002
+  safe_margin_utilization: 0.08
+  margin_utilization_penalty: 2.0
+
+  # End-of-episode capital preservation budgets.
+  maximum_drawdown: 0.15
+  terminal_shortfall_penalty: 1.0
+  terminal_drawdown_penalty: 2.0
+  # Terminal failures must be worse than surviving in drawdown. The loss and
+  # remaining-horizon terms prevent an agent from using early termination.
+  margin_call_penalty: 5.0
+  margin_call_loss_penalty: 2.0
+  early_termination_penalty: 4.0
+  bankruptcy_penalty: 8.0
+  bankruptcy_loss_penalty: 2.0

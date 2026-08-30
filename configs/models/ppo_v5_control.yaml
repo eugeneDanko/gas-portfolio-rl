@@ -1,0 +1,21 @@
+ppo:
+  version: v4
+  experiment_tag: v5_control
+  total_timesteps: 200000
+  n_envs: 4
+  learning_rate: 0.0003
+  learning_rate_schedule: linear
+  n_steps: 256
+  batch_size: 256
+  n_epochs: 10
+  gamma: 0.9752487531
+  gae_lambda: 0.95
+  clip_range: 0.20
+  ent_coef: 0.001
+  policy_layers: [128, 128]
+  decision_interval: 5
+  option_coverage_deadband: 0.06
+  minimum_option_coverage: 0.25
+  option_target_smoothing: 0.35
+  stress_training_fraction: 0.50
+  put_ladder_drawdown_score_penalty: 4.0

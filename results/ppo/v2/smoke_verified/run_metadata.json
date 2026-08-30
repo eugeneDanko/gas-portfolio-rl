@@ -1,0 +1,228 @@
+{
+  "algorithm": "PPO",
+  "training_seed": 1000,
+  "train_seed_range": [
+    1000,
+    9999
+  ],
+  "validation_seed_start": 10000,
+  "test_seeds_used": false,
+  "tensorboard_enabled": false,
+  "config": {
+    "market": {
+      "trading_days": 252,
+      "episode_steps": 504,
+      "calendar_start_year": 2027,
+      "initial_gas_price": 3.0,
+      "initial_stock_price": 100.0,
+      "annual_stock_dividend_yield": 0.03,
+      "stock_dividend_payment_day": 25,
+      "seasonality_anchors": [
+        [
+          "01-01",
+          0.3
+        ],
+        [
+          "02-15",
+          0.1
+        ],
+        [
+          "04-25",
+          -0.22
+        ],
+        [
+          "06-01",
+          0.02
+        ],
+        [
+          "08-31",
+          0.02
+        ],
+        [
+          "10-15",
+          0.1
+        ],
+        [
+          "12-15",
+          0.24
+        ],
+        [
+          "12-27",
+          0.42
+        ],
+        [
+          "12-31",
+          0.34
+        ]
+      ],
+      "seasonality_randomization": 0.1,
+      "seasonality_phase_jitter_days": 3,
+      "contract_expiry_day": 27,
+      "forward_curve_contracts": 12,
+      "q_kappa": 2.0,
+      "q_theta": 0.02,
+      "q_sigma": 0.4,
+      "transition_matrix": [
+        [
+          0.9853757211687246,
+          0.014624278831275362
+        ],
+        [
+          0.0835637200124875,
+          0.9164362799875125
+        ]
+      ],
+      "normal": {
+        "kappa": 2.5,
+        "long_run_factor": 0.0,
+        "gas_volatility": 0.3529464312649868,
+        "gas_jump_probability": 0.001,
+        "gas_jump_mean": 0.0,
+        "gas_jump_std": 0.12,
+        "stock_drift": 0.07,
+        "stock_volatility": 0.16372344410609468,
+        "gas_beta": 0.1275445110699527,
+        "market_drift": 0.05,
+        "market_volatility": 0.09741531863489791,
+        "corporate_jump_probability": 0.0005,
+        "corporate_jump_mean": -0.08,
+        "corporate_jump_std": 0.05
+      },
+      "crisis": {
+        "kappa": 1.2,
+        "long_run_factor": 0.2,
+        "gas_volatility": 0.6150624046158681,
+        "gas_jump_probability": 0.02,
+        "gas_jump_mean": 0.04,
+        "gas_jump_std": 0.2,
+        "stock_drift": -0.18,
+        "stock_volatility": 0.3211857576585129,
+        "gas_beta": 0.2,
+        "market_drift": -0.25,
+        "market_volatility": 0.24799119704619604,
+        "corporate_jump_probability": 0.014293381005133887,
+        "corporate_jump_mean": -0.12,
+        "corporate_jump_std": 0.1
+      }
+    },
+    "portfolio": {
+      "initial_cash": 1000000.0,
+      "margin_rate": 0.15,
+      "stock_transaction_cost": 0.0005,
+      "futures_transaction_cost": 0.0002,
+      "annual_cash_rate": 0.02,
+      "min_cash_buffer": 0.01,
+      "bankruptcy_fraction": 0.2
+    },
+    "environment": {
+      "rolling_window": 20,
+      "observable_regime": false
+    },
+    "reward": {
+      "target_annual_volatility": 0.2,
+      "maximum_cash_weight": 0.8,
+      "maximum_drawdown": 0.15,
+      "risk_penalty": 2.0,
+      "cash_penalty": 0.01,
+      "drawdown_penalty": 0.5,
+      "margin_call_penalty": 5.0,
+      "margin_call_loss_penalty": 2.0,
+      "early_termination_penalty": 4.0,
+      "bankruptcy_penalty": 5.0,
+      "bankruptcy_loss_penalty": 1.0
+    },
+    "baselines": {
+      "relative_momentum": {
+        "lookback": 20,
+        "allocation": 0.5,
+        "neutral_stock_weight": 0.25,
+        "score_threshold": 0.25,
+        "rebalance_interval": 5
+      },
+      "rolling_hedge": {
+        "lookback": 20,
+        "stock_weight": 0.5,
+        "initial_hedge_ratio": 0.5,
+        "maximum_futures_exposure": 0.75,
+        "rebalance_interval": 5
+      },
+      "signed_rolling_hedge": {
+        "lookback": 40,
+        "stock_weight": 0.5,
+        "initial_hedge_ratio": 0.5,
+        "maximum_futures_exposure": 0.5,
+        "rebalance_interval": 5,
+        "beta_smoothing": 0.2,
+        "beta_shrinkage": 0.5,
+        "minimum_abs_correlation": 0.1,
+        "exposure_change_threshold": 0.03
+      }
+    },
+    "calibration": {
+      "seed": 2027,
+      "paths_per_candidate": 24,
+      "candidate_count": 32,
+      "path_steps": 504,
+      "gas_volatility_target": 0.45,
+      "stock_volatility_target": 0.24,
+      "futures_volatility_target": 0.42,
+      "stock_futures_correlation_target": 0.2,
+      "crisis_fraction_target": 0.14,
+      "maximum_objective": 0.1,
+      "gas_volatility_relative_tolerance": 0.15,
+      "stock_volatility_relative_tolerance": 0.15,
+      "futures_volatility_relative_tolerance": 0.15,
+      "stock_futures_correlation_absolute_tolerance": 0.08,
+      "crisis_fraction_absolute_tolerance": 0.03
+    },
+    "evaluation": {
+      "seed_start": 10000,
+      "seeds": 200,
+      "stress_seeds": 100,
+      "confidence_level": 0.95,
+      "cvar_alpha": 0.05,
+      "bootstrap_samples": 500,
+      "fixed_stock_weight": 0.5,
+      "fixed_futures_exposure": -0.25
+    },
+    "ppo": {
+      "version": "v2",
+      "total_timesteps": 4096,
+      "n_envs": 2,
+      "learning_rate": 0.0003,
+      "learning_rate_schedule": "linear",
+      "n_steps": 128,
+      "batch_size": 128,
+      "n_epochs": 2,
+      "gamma": 0.9752487531,
+      "gae_lambda": 0.95,
+      "clip_range": 0.2,
+      "ent_coef": 0.001,
+      "vf_coef": 0.5,
+      "max_grad_norm": 0.5,
+      "policy_layers": [
+        128,
+        128
+      ],
+      "normalize_observations": true,
+      "normalize_rewards": true,
+      "clip_observation": 10.0,
+      "clip_reward": 10.0,
+      "eval_frequency": 2048,
+      "validation_episodes": 2,
+      "checkpoint_frequency": 2048,
+      "decision_interval": 5,
+      "stock_action_deadband": 0.03,
+      "futures_action_deadband": 0.03,
+      "margin_call_score_penalty": 5.0,
+      "bankruptcy_score_penalty": 10.0,
+      "maximum_high_cash_fraction": 0.6,
+      "high_cash_score_penalty": 1.0,
+      "minimum_average_stock_weight": 0.1,
+      "stock_shortfall_score_penalty": 2.0,
+      "maximum_turnover": 20.0,
+      "turnover_score_penalty": 0.05,
+      "device": "auto"
+    }
+  }
+}

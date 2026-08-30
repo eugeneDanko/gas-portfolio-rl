@@ -1,0 +1,35 @@
+{
+  "passes_all": false,
+  "checks": {
+    "zero_bankruptcy": true,
+    "margin_call_rate_at_most_1pct": true,
+    "base_reward_above_cash": true,
+    "base_return_above_cash": true,
+    "calm_reward_above_cash": true,
+    "calm_return_above_cash": true,
+    "crisis_reward_above_signed_hedge": false,
+    "crisis_drawdown_no_worse_than_signed_hedge": false,
+    "crisis_reward_above_cash": false,
+    "not_constant_cash": true,
+    "minimum_stock_participation": true,
+    "turnover_within_limit": true
+  },
+  "observed": {
+    "maximum_margin_call_rate": 0.0,
+    "maximum_bankruptcy_rate": 0.0,
+    "base_ppo_reward": 0.1277300600611532,
+    "base_cash_reward": -0.1616015872175865,
+    "base_ppo_return": 0.14495822111163173,
+    "base_cash_return": 0.04080912220051336,
+    "calm_ppo_return": 0.17826429785824102,
+    "calm_cash_return": 0.04080912220051336,
+    "base_high_cash_fraction": 0.0,
+    "crisis_ppo_reward": -3.1139944629363443,
+    "crisis_signed_reward": -2.077640382217433,
+    "crisis_cash_reward": -0.1616015872175865,
+    "crisis_ppo_drawdown": 0.4325584371758642,
+    "crisis_signed_drawdown": 0.39246127225857286,
+    "base_average_stock_weight": 0.49951361367532776,
+    "maximum_turnover": 2.2010158328869727
+  }
+}

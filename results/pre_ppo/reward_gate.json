@@ -1,0 +1,115 @@
+{
+  "passes_reward_gate": true,
+  "checks": {
+    "baseline_ppo_feasible_alignment": true,
+    "grid_ppo_feasible_alignment": true,
+    "robust_optimum_has_no_margin_calls": true,
+    "robust_optimum_has_no_bankruptcies": true
+  },
+  "diagnostics": {
+    "robust_optimum_has_interior_stock": false,
+    "robust_optimum_uses_futures": false,
+    "crisis_hedge_improves_same_stock_reward": false
+  },
+  "best_grid_policy": {
+    "strategy": "grid_s025_fp000",
+    "stock_weight": 0.25,
+    "futures_exposure": 0.0,
+    "robust_reward": -0.3643348273995566,
+    "base_reward": -0.2905515673573703,
+    "calm_reward": -0.1607536285812542,
+    "crisis_reward": -0.5723581715449231,
+    "base_return": 0.040815589786703244,
+    "calm_return": 0.08382850595890072,
+    "crisis_return": -0.07714153216131289,
+    "maximum_margin_call_rate": 0.0,
+    "maximum_bankruptcy_rate": 0.0
+  },
+  "same_stock_unhedged_policy": {
+    "strategy": "grid_s025_fp000",
+    "stock_weight": 0.25,
+    "futures_exposure": 0.0,
+    "robust_reward": -0.3643348273995566,
+    "base_reward": -0.2905515673573703,
+    "calm_reward": -0.1607536285812542,
+    "crisis_reward": -0.5723581715449231,
+    "base_return": 0.040815589786703244,
+    "calm_return": 0.08382850595890072,
+    "crisis_return": -0.07714153216131289,
+    "maximum_margin_call_rate": 0.0,
+    "maximum_bankruptcy_rate": 0.0
+  },
+  "best_same_stock_hedge_policy": {
+    "strategy": "grid_s025_fm012",
+    "stock_weight": 0.25,
+    "futures_exposure": -0.125,
+    "robust_reward": -2.065116398471455,
+    "base_reward": -1.5135736912262443,
+    "calm_reward": -0.48710742032346344,
+    "crisis_reward": -3.662280162516357,
+    "base_return": 0.005125264261095708,
+    "calm_return": 0.08825913494102322,
+    "crisis_return": -0.1652745541562553,
+    "maximum_margin_call_rate": 0.0,
+    "maximum_bankruptcy_rate": 0.0
+  },
+  "baseline_diagnostics": [
+    {
+      "scenario": "base",
+      "reward_utility_correlation": 0.5984286480094254,
+      "passes_minimum_alignment": true,
+      "episodes": 1200,
+      "ppo_feasible_reward_utility_correlation": 0.8835127803270455,
+      "passes_ppo_feasible_alignment": true,
+      "ppo_feasible_episodes": 600
+    },
+    {
+      "scenario": "calm",
+      "reward_utility_correlation": 0.5249959236436234,
+      "passes_minimum_alignment": true,
+      "episodes": 1200,
+      "ppo_feasible_reward_utility_correlation": 0.6489775545168637,
+      "passes_ppo_feasible_alignment": true,
+      "ppo_feasible_episodes": 600
+    },
+    {
+      "scenario": "crisis_stress",
+      "reward_utility_correlation": 0.600989397699884,
+      "passes_minimum_alignment": true,
+      "episodes": 600,
+      "ppo_feasible_reward_utility_correlation": 0.8494581938973769,
+      "passes_ppo_feasible_alignment": true,
+      "ppo_feasible_episodes": 300
+    }
+  ],
+  "grid_diagnostics": [
+    {
+      "scenario": "base",
+      "reward_utility_correlation": 0.6504882347530668,
+      "passes_minimum_alignment": true,
+      "episodes": 300,
+      "ppo_feasible_reward_utility_correlation": 0.6504882347530668,
+      "passes_ppo_feasible_alignment": true,
+      "ppo_feasible_episodes": 300
+    },
+    {
+      "scenario": "calm",
+      "reward_utility_correlation": 0.6625969288782395,
+      "passes_minimum_alignment": true,
+      "episodes": 300,
+      "ppo_feasible_reward_utility_correlation": 0.6625969288782395,
+      "passes_ppo_feasible_alignment": true,
+      "ppo_feasible_episodes": 300
+    },
+    {
+      "scenario": "crisis_stress",
+      "reward_utility_correlation": 0.5237976789082377,
+      "passes_minimum_alignment": true,
+      "episodes": 300,
+      "ppo_feasible_reward_utility_correlation": 0.5237976789082377,
+      "passes_ppo_feasible_alignment": true,
+      "ppo_feasible_episodes": 300
+    }
+  ],
+  "grid_policies": 15
+}

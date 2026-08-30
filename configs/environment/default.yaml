@@ -1,0 +1,30 @@
+portfolio:
+  initial_cash: 1000000.0
+  margin_rate: 0.15
+  stock_transaction_cost: 0.0005
+  futures_transaction_cost: 0.0002
+  annual_cash_rate: 0.02
+  min_cash_buffer: 0.01
+  bankruptcy_fraction: 0.20
+environment:
+  rolling_window: 20
+  observable_regime: false
+
+option:
+  enabled: true
+  # Three listed long-put families: roughly two weeks, one month and one quarter.
+  tenors: [10, 21, 63]
+  strike_moneyness: 0.95
+  maximum_total_coverage: 1.0
+  maximum_option_value_fraction: 0.10
+  maximum_annual_premium_fraction: 0.08
+  contract_multiplier: 100.0
+  commission_per_contract: 1.0
+  relative_half_spread: 0.01
+  initial_implied_volatility: 0.30
+  iv_realized_vol_multiplier: 1.20
+  iv_floor: 0.15
+  iv_cap: 1.00
+  # Calm markets have mild term contango; high realized volatility may invert it.
+  iv_term_structure_slope: 0.04
+  iv_crisis_inversion_sensitivity: 0.50

@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.ipynb_checkpoints/
+.venv/
+*.egg-info/
+build/
+dist/
+.env
+.env.*
+
+# Duplicated exports downloaded from notebook/Drive runs.
+/pre_ppo/
+/validation_evaluation/
+/run_*/
+
+# Keep compact metrics and figures, but exclude trained model bundles/checkpoints.
+results/**/checkpoints/
+results/**/best_model.zip
+results/**/final_model.zip
+results/**/*.pkl
+results/runs/*
+results/comparisons/*
+results/stress_tests/*
+results/reports/*
+!results/**/.gitkeep

@@ -1,0 +1,22 @@
+{
+  "passes_all": false,
+  "checks": {
+    "zero_bankruptcy": true,
+    "margin_call_rate_at_most_1pct": true,
+    "base_reward_above_cash": true,
+    "crisis_reward_above_signed_hedge": true,
+    "crisis_drawdown_no_worse_than_signed_hedge": true,
+    "not_constant_cash": false
+  },
+  "observed": {
+    "maximum_margin_call_rate": 0.0,
+    "maximum_bankruptcy_rate": 0.0,
+    "base_ppo_reward": -0.07962864913475319,
+    "base_cash_reward": -0.1616015872175865,
+    "base_high_cash_fraction": 1.0,
+    "crisis_ppo_reward": -0.13864080279755026,
+    "crisis_signed_reward": -2.077640382217433,
+    "crisis_ppo_drawdown": 0.08013939791564884,
+    "crisis_signed_drawdown": 0.39246127225857286
+  }
+}

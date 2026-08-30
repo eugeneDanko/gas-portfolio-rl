@@ -1,0 +1,9 @@
+{
+  "quick_run": false,
+  "calibration_enabled": true,
+  "calibration_paths_per_candidate": 24,
+  "calibration_candidate_count": 32,
+  "validation_seeds": 200,
+  "stress_seeds": 100,
+  "final_evaluation": true
+}

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gas-portfolio-rl"
+version = "0.1.0"
+description = "Synthetic Gymnasium environment for dynamic GasCo and gas futures allocation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "gymnasium>=1.2,<1.4",
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+rl = ["stable-baselines3>=2.8,<3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,16 @@
+calibration:
+  seed: 2027
+  paths_per_candidate: 24
+  candidate_count: 32
+  path_steps: 504
+  gas_volatility_target: 0.45
+  stock_volatility_target: 0.24
+  futures_volatility_target: 0.42
+  stock_futures_correlation_target: 0.20
+  crisis_fraction_target: 0.14
+  maximum_objective: 0.10
+  gas_volatility_relative_tolerance: 0.15
+  stock_volatility_relative_tolerance: 0.15
+  futures_volatility_relative_tolerance: 0.15
+  stock_futures_correlation_absolute_tolerance: 0.08
+  crisis_fraction_absolute_tolerance: 0.03

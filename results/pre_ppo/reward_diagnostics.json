@@ -1,0 +1,29 @@
+[
+  {
+    "scenario": "base",
+    "reward_utility_correlation": 0.5984286480094254,
+    "passes_minimum_alignment": true,
+    "episodes": 1200,
+    "ppo_feasible_reward_utility_correlation": 0.8835127803270455,
+    "passes_ppo_feasible_alignment": true,
+    "ppo_feasible_episodes": 600
+  },
+  {
+    "scenario": "calm",
+    "reward_utility_correlation": 0.5249959236436234,
+    "passes_minimum_alignment": true,
+    "episodes": 1200,
+    "ppo_feasible_reward_utility_correlation": 0.6489775545168637,
+    "passes_ppo_feasible_alignment": true,
+    "ppo_feasible_episodes": 600
+  },
+  {
+    "scenario": "crisis_stress",
+    "reward_utility_correlation": 0.600989397699884,
+    "passes_minimum_alignment": true,
+    "episodes": 600,
+    "ppo_feasible_reward_utility_correlation": 0.8494581938973769,
+    "passes_ppo_feasible_alignment": true,
+    "ppo_feasible_episodes": 300
+  }
+]

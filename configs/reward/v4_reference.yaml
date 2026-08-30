@@ -1,0 +1,19 @@
+reward:
+  profit_weight: 1.0
+  loss_aversion: 1.25
+  hedge_effectiveness_weight: 0.75
+  hedge_effectiveness_clip: 0.02
+  downside_penalty: 2.0
+  drawdown_increase_penalty: 0.10
+  drawdown_budget_penalty: 0.0
+  turnover_penalty: 0.002
+  safe_margin_utilization: 0.08
+  margin_utilization_penalty: 2.0
+  maximum_drawdown: 0.15
+  terminal_shortfall_penalty: 1.0
+  terminal_drawdown_penalty: 2.0
+  margin_call_penalty: 5.0
+  margin_call_loss_penalty: 2.0
+  early_termination_penalty: 4.0
+  bankruptcy_penalty: 8.0
+  bankruptcy_loss_penalty: 2.0
